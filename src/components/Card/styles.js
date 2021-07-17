@@ -7,17 +7,19 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    margin: 20px 0px;
+    margin: 20px 10px;
     background-color: #eee;
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 0 0 0.5em gray;
-
-    ${props => props.isBlurred ? 'filter: blur(3px);' : 'filter: none;'}
+    transition: cubic-bezier(0.075, 0.52, 0.165, 0.04) 0.2s;
+    
+    
+    ${props => props.isBlurred ? 'filter: blur(3px); opacity: 0.3;' : 'filter: none;'}
 
     :hover {
         transform: scale(1.05,1.05);
-        transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+        opacity: 1;
         filter: none;
     }
 `;

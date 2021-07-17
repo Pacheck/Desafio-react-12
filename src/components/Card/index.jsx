@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Container, Title, Overview, Image, MovieInfoWrapper } from './styles';
 
-const Card = ({ movieInfo, handleMouseEnter, handleMouseLeave, isBlurred }) => {
-  const { title, overview, poster_path } = movieInfo;
+const Card = ({ mediaInfo, handleMouseEnter, handleMouseLeave, isBlurred }) => {
+  const { title, name, overview, poster_path } = mediaInfo;
   const ImagePath = `https://image.tmdb.org/t/p/w500`;
 
   return (
@@ -15,7 +15,7 @@ const Card = ({ movieInfo, handleMouseEnter, handleMouseLeave, isBlurred }) => {
       >
         <MovieInfoWrapper>
           <Image src={`${ImagePath}${poster_path}`} />
-          <Title>{title}</Title>
+          <Title>{title || name}</Title>
         </MovieInfoWrapper>
         <Overview>{overview}</Overview>
       </Container>
