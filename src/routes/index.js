@@ -7,27 +7,31 @@ import LandingPage from '../pages/landing-page';
 const routes = [
     // {
     //     component: LandingPage,
-    //     path: '/',
     //     otherConfigs: {
+    //         path: '/',
     //         exact: true,
     //     }
     // },
     {
         component: MoviesPage,
-        path: '/movies',
-        otherConfigs: null
+        otherConfigs: {
+            path: '/movies',
+            exact: false,
+        }
     }, 
     {
         component: SeriesPage,
-        path: '/series',
-        otherConfigs: null
+        otherConfigs: {
+            path: '/series',
+            exact: false,
+        }
     }
 ];
 
 const Routes = () => (
     <Switch>
-        { routes.map((route, index) => (
-            <Route key={index} path={route.path} component={route.component} {...route.otherConfigs} />
+        { routes.map(({ path, component, otherConfigs}, index) => (
+            <Route key={index} path={path} component={component} {...otherConfigs} />
         ))}
     </Switch>
 );
