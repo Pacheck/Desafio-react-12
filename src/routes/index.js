@@ -5,13 +5,13 @@ import SeriesPage from '../pages/series-page';
 import LandingPage from '../pages/landing-page';
 
 const routes = [
-    // {
-    //     component: LandingPage,
-    //     otherConfigs: {
-    //         path: '/',
-    //         exact: true,
-    //     }
-    // },
+    {
+        component: LandingPage,
+        otherConfigs: {
+            path: '/',
+            exact: true,
+        }
+    },
     {
         component: MoviesPage,
         otherConfigs: {
